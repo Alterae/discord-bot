@@ -1,6 +1,5 @@
 import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
-import * as fs from 'fs';
 
 dotenv.config();
 
