@@ -6,7 +6,7 @@ import Command from '../../types/command';
  */
 const command: Command = {
   name: 'stop',
-  aliases: ['kill', 'shutdown', 'quit', 'exit'],
+  aliases: ['kill', 'shutdown', 'quit', 'exit', 'die'],
   description: 'Stops execution of the bot program.',
   protection: 'protected',
 
