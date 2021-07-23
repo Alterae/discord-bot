@@ -10,11 +10,17 @@ const command: Command = {
   description: 'Stops execution of the bot program.',
   protection: 'protected',
 
-  execute: (
+  execute: async (
     message: Message,
     _args: string[] = [],
     _options: string[] = []
   ) => {
+    if (message.author.id !== process.env.AUTHOR_ID) {
+      console.warn(`User ${message.author} atttempted to stop the bot.`);
+      return;
+    }
+    console.log('Recieved shutdown command.  Stopping...');
+    await message.channel.send('**Shutting down...**');
     process.exit();
   },
 };
