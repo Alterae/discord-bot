@@ -6,7 +6,8 @@
     "strictFunctionTypes": true,
     "sourceMap": true,
     "rootDir": "src",
-    "outDir": "out"
+    "outDir": "out",
+    "baseUrl": "src"
   },
   "exclude": ["node_modules", "**/node_modules/*"]
 }
