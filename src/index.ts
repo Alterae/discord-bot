@@ -1,6 +1,7 @@
 import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
 import commands from './commands';
+import help from './commands/help';
 import 'colors';
 
 const prefix = '!'; // TODO: Make prompt non-hardcoded
@@ -24,8 +25,14 @@ client.on('message', (message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
 
+  if (command === 'help') {
+    help(message, commands, args, []);
+    return;
+  }
+
   commands.forEach((cmd) => {
     if (!(cmd.name === command || cmd.aliases.includes(command))) return;
+
     cmd.execute(message, args, []); // TODO: Add flag parsing, pass options here.
   });
 });
