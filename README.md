@@ -4,6 +4,9 @@ Just another discord bot. Have fun.
 
 ## Getting Started
 
+> **Prerequisites:**
+> You will need `node`, `npm`, and TypeScript installed. You also need an internet connection, a Discord account, and you will have to create an application and bot via Discord's developer portal.
+
 Clone the repository, `cd` into it, and install dependencies:
 
 ```console
