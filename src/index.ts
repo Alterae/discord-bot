@@ -1,8 +1,8 @@
+import 'colors';
 import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
 import commands from './commands';
 import help from './commands/help';
-import 'colors';
 
 const prefix = '!'; // TODO: Make prompt non-hardcoded
 
