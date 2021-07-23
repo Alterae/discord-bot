@@ -2,7 +2,9 @@ import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
 import commands from './commands';
 
-// Load environment variables.
+const prefix = '!'; // TODO: Make prompt non-hardcoded
+
+// Load environment variables
 dotenv.config();
 
 const client = new Discord.Client();
@@ -11,20 +13,21 @@ client.once('ready', () => {
   console.log('Bot started!');
 });
 
-client.on('message', async (message) => {
-  if (message.content === 'ping') {
-    message.channel.send('pong');
-  } else if (
-    // `!quit` command.  Only I can use it.
-    // TODO: Make less janky.
-    // TODO: Refactor into proper command.
-    // TODO: Load ID from config file instead.
-    message.content === '!stop' &&
-    message.author.id === process.env.AUTHOR_ID
-  ) {
-    await message.channel.send('**Shutting down...**');
-    process.exit();
+client.on('message', (message) => {
+  // Ignore messages that don't start with the prefix, or are sent by bots
+  if (!message.content.startsWith(prefix) || message.author.bot) {
+    return;
   }
+
+  // TODO: Improve parsing logic to support multi-word (quoted) args, flags
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+
+  commands.forEach((cmd) => {
+    if (!(cmd.name === command || cmd.aliases.includes(command))) {
+      cmd.execute(message, args, []); // TODO: Add flag parsing, pass options here.
+    }
+  });
 });
 
 console.log('Starting bot...');
