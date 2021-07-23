@@ -16,10 +16,10 @@ const command: Command = {
     _options: string[] = []
   ) => {
     if (message.author.id !== process.env.AUTHOR_ID) {
-      console.warn(`User ${message.author} atttempted to stop the bot.`);
+      console.warn(`User ${message.author} atttempted to stop the bot.`.yellow);
       return;
     }
-    console.log('Recieved shutdown command.  Stopping...');
+    console.log('Recieved shutdown command.  Stopping...'.cyan.bold);
     await message.channel.send('**Shutting down...**');
     process.exit();
   },

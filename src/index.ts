@@ -1,6 +1,7 @@
 import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
 import commands from './commands';
+import 'colors';
 
 const prefix = '!'; // TODO: Make prompt non-hardcoded
 
@@ -10,7 +11,7 @@ dotenv.config();
 const client = new Discord.Client();
 
 client.once('ready', () => {
-  console.log('Bot started!');
+  console.log('Bot started!'.green.bold);
 });
 
 client.on('message', (message) => {
@@ -31,6 +32,7 @@ client.on('message', (message) => {
   });
 });
 
+console.clear();
 console.log('Starting bot...');
 
 client.login(process.env.TOKEN);
