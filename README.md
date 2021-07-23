@@ -33,11 +33,10 @@ See the [architecture notes](./architecture-notes.md) for some details on how ev
 ### Commands
 
 - `stop` - stops the bot (only usable by the owner of the bot)
-<!-- TODO: Make this non-hardcoded, update documentation to reflect that -->
 
 ### Other
 
-- Responds with "pong" when the message "ping" is sent.
+- Object-based command system supporting aliases and taking full advantage of typescript's type system.
 
 ## Planned Features
 
@@ -54,7 +53,6 @@ See the [architecture notes](./architecture-notes.md) for some details on how ev
 
 ### Other
 
-- Object-based command system supporting aliases and taking full advantage of typescript's type system.
 - Command parser supporting quoted arguments and (rudimentary) flags (like most command-line apps).
 - Output using embeds.
 - An option (maybe via a `--no-embed` flag) to fall back to regular text instead of using embeds.
