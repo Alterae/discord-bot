@@ -2,7 +2,7 @@ import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
 import * as fs from 'fs';
 
-dotenv.config({ path: __dirname + '/.env' });
+dotenv.config();
 
 const client = new Discord.Client();
 

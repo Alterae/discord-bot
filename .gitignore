@@ -1,4 +1,4 @@
 log.txt
 node_modules
-src/.env
+.env
 out

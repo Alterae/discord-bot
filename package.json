@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc && cp src/.env out/.env && node out/index.js"
+    "start": "tsc && node out/index.js"
   },
   "author": "Michelle S.",
   "license": "MIT",
