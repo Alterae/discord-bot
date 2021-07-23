@@ -11,10 +11,11 @@ npm install
 # Or pnpm install, yarn, etc.
 ```
 
-Create a `.env` file in the project root, and put your bot token in it:
+Create a `.env` file in the project root, and put your bot token and user id in it:
 
 ```ini
 TOKEN=YOUR_TOKEN_HERE
+AUTHOR_ID=YOUR_USER_ID_HERE
 ```
 
 > ⚠ **Warning:** DO NOT COMMIT THE `.env` FILE OR ANYTHING CONTAINING YOUR TOKEN TO VERSION CONTROL.

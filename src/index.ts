@@ -1,12 +1,14 @@
 import * as Discord from 'discord.js';
 import * as dotenv from 'dotenv';
+import commands from './commands';
 
+// Load environment variables.
 dotenv.config();
 
 const client = new Discord.Client();
 
 client.once('ready', () => {
-  console.log('Ready!');
+  console.log('Bot started!');
 });
 
 client.on('message', async (message) => {
@@ -18,11 +20,13 @@ client.on('message', async (message) => {
     // TODO: Refactor into proper command.
     // TODO: Load ID from config file instead.
     message.content === '!stop' &&
-    message.author.id === '274313709579665408' // My ID
+    message.author.id === process.env.AUTHOR_ID
   ) {
     await message.channel.send('**Shutting down...**');
     process.exit();
   }
 });
+
+console.log('Starting bot...');
 
 client.login(process.env.TOKEN);
