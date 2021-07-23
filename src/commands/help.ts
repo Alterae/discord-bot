@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Client, Message } from 'discord.js';
 import Command from '../types/command';
 
 /**
@@ -17,6 +17,7 @@ import Command from '../types/command';
  * @param _options The options passed to the command.
  */
 const help = (
+  _client: Client,
   message: Message,
   commands: Command[],
   _args: string[],

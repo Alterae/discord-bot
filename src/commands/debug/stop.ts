@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Client, Message } from 'discord.js';
 import Command from '../../types/command';
 
 /**
@@ -11,6 +11,7 @@ const command: Command = {
   protection: 'protected',
 
   execute: async (
+    client: Client,
     message: Message,
     _args: string[] = [],
     _options: string[] = []
@@ -23,6 +24,7 @@ const command: Command = {
       return;
     }
     console.log('Recieved shutdown command.  Stopping...'.blue.bold);
+    await client.user.setStatus('invisible');
     await message.channel.send('**Shutting down...**');
     process.exit();
   },

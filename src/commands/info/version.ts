@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Client, Message } from 'discord.js';
 import Command from '../../types/command';
 
 /**
@@ -10,7 +10,12 @@ const command: Command = {
   description: 'Display version information about the bot.',
   protection: 'normal',
 
-  execute: (message: Message, _args: string[], _options: string[]) => {
+  execute: (
+    _client: Client,
+    message: Message,
+    _args: string[],
+    _options: string[]
+  ) => {
     message.channel.send(
       `This bot's version: \`${process.env.npm_package_version}\``
     );

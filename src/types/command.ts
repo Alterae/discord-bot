@@ -1,9 +1,10 @@
-import { Message } from 'discord.js';
+import { Client, Message } from 'discord.js';
 
 /**
  * Type representing a command's `execute()` method.
  */
 type CommandHandler = (
+  client: Client,
   message: Message,
   args: string[],
   options: string[]
@@ -13,6 +14,7 @@ type CommandHandler = (
  * Type representing a command's `execute()` method.
  */
 type CommandHandlerAsync = (
+  client: Client,
   message: Message,
   args: string[],
   options: string[]

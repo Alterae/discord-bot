@@ -1,4 +1,4 @@
-import { Message } from 'discord.js';
+import { Client, Message } from 'discord.js';
 import Command from '../../types/command';
 
 const command: Command = {
@@ -7,7 +7,12 @@ const command: Command = {
   description: 'Display info about the bot.',
   protection: 'normal',
 
-  execute: (message: Message, _args: string[], _options: string[]) => {
+  execute: (
+    _client: Client,
+    message: Message,
+    _args: string[],
+    _options: string[]
+  ) => {
     // TODO: Add website link when website happens.
     // TODO: Figure out a way to make this less gross.
     // TODO: Make these values not hardcoded.

@@ -12,6 +12,7 @@ dotenv.config();
 const client = new Discord.Client();
 
 client.once('ready', () => {
+  client.user.setStatus('online');
   console.log('Bot started!'.green.bold);
 });
 
@@ -26,14 +27,14 @@ client.on('message', (message) => {
   const command = args.shift().toLowerCase();
 
   if (command === 'help') {
-    help(message, commands, args, []);
+    help(client, message, commands, args, []);
     return;
   }
 
   commands.forEach((cmd) => {
     if (!(cmd.name === command || cmd.aliases.includes(command))) return;
 
-    cmd.execute(message, args, []); // TODO: Add flag parsing, pass options here.
+    cmd.execute(client, message, args, []); // TODO: Add flag parsing, pass options here.
   });
 });
 
