@@ -13,6 +13,8 @@ npm start
 - `version` - show the package version of the bot
 - `about` - show info about the bot (name, version, GitHub repo, description, etc.)
 - `help` - help command, self-explanatory
+- `poll` - a poll command, because we don't have enough of those
+- maybe a command to view GitHub repos?
 - More to come!
 
 ## Planned features
