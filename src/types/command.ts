@@ -1,11 +1,22 @@
+import { Message } from 'discord.js';
+
 /**
  * Type representing a command's `execute()` method.
  */
-type CommandHandler = (args: string[], options: string[]) => void;
+type CommandHandler = (
+  message: Message,
+  args: string[],
+  options: string[]
+) => void;
+
 /**
  * Type representing a command's `execute()` method.
  */
-type CommandHandlerAsync = (args: string[], options: string[]) => Promise<void>;
+type CommandHandlerAsync = (
+  message: Message,
+  args: string[],
+  options: string[]
+) => Promise<void>;
 
 /**
  * Defines the interface for a command.
