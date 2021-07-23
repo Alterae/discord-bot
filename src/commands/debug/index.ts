@@ -2,7 +2,7 @@ import Command from '../../types/command';
 import stop from './stop';
 
 /**
- * The list of commands in the debug module.
+ * The debug module.  Includes commands for managing/debugging the bot.
  */
 const commands: Command[] = [stop];
 
