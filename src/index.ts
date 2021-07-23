@@ -25,8 +25,9 @@ client.on('message', (message) => {
 
   commands.forEach((cmd) => {
     if (!(cmd.name === command || cmd.aliases.includes(command))) {
-      cmd.execute(message, args, []); // TODO: Add flag parsing, pass options here.
+      return;
     }
+    cmd.execute(message, args, []); // TODO: Add flag parsing, pass options here.
   });
 });
 
