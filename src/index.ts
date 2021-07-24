@@ -12,7 +12,10 @@ dotenv.config();
 const client = new Discord.Client();
 
 client.once('ready', () => {
-  client.user.setStatus('online');
+  client.user.setPresence({
+    activity: { name: `${prefix}help`, type: 'LISTENING' },
+    status: 'online',
+  });
   console.log('Bot started!'.green.bold);
 });
 
