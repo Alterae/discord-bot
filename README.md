@@ -39,6 +39,7 @@ See the [architecture notes](./architecture-notes.md) for some details on how ev
 - `stop` - stops the bot (only usable by the owner of the bot)
 - `version` - show the package version of the bot
 - `about` - show info about the bot (name, version, GitHub repo, description, etc.)
+- `flip` - flip a coin
 
 ### Other
 
@@ -50,7 +51,6 @@ See the [architecture notes](./architecture-notes.md) for some details on how ev
 
 - `poll` - a poll command, because we don't have enough of those
 - `roll` - roll dice using dice notation
-- `flip` - flip a coin
 - maybe a command to view GitHub repos?
 - More to come!
 
