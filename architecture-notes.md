@@ -21,3 +21,10 @@ The command loading process goes something like this:
 To add a new command, place it in a module, and then edit the module's `index.ts` to import and re-export it.
 
 To add a new _module_, create a new subfolder of the commands directory, and then add code which exports an array of commands (see the existing modules for reference).
+
+## Problems
+
+The current architecture has some significant issues:
+
+- The `help` command is currently built directly into the command handler as a special function, instead of being implemented as a regular command.
+- There is, at present, no good way to share data between parts of the bot.
