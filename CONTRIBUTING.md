@@ -8,6 +8,12 @@ Also feel free to open an issue if something isn't right.
 
 ## Code Style
 
-Use Prettier for formatting, with trailing commas set to always.
+Use Prettier for formatting. This project uses the default settings, with one exception: `trailingCommas` is set to `all`.
+
+You can run it [from your code editor](https://prettier.io/docs/en/editors.html), or from the command line:
+
+```console
+npx prettier --write
+```
 
 Consistent code style is good.  Automatically enforced code style is even better.
