@@ -1,4 +1,4 @@
-import { Client, Message } from 'discord.js';
+import { Client, Message } from "discord.js";
 
 /**
  * Type representing a command's `execute()` method.
@@ -7,7 +7,7 @@ type CommandHandler = (
   client: Client,
   message: Message,
   args: string[],
-  options: string[]
+  options: string[],
 ) => void;
 
 /**
@@ -17,7 +17,7 @@ type CommandHandlerAsync = (
   client: Client,
   message: Message,
   args: string[],
-  options: string[]
+  options: string[],
 ) => Promise<void>;
 
 /**
@@ -42,7 +42,7 @@ export default interface Command {
    * - `'secret'` - any user can use the command, but it will not be listed by the help command.
    * - `'protected'` - only the bot author can use the command, and it will not be listed.
    */
-  protection: 'normal' | 'secret' | 'protected';
+  protection: "normal" | "secret" | "protected";
   /**
    * The function called when the command is executed.
    */

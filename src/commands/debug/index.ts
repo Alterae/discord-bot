@@ -1,5 +1,5 @@
-import Command from '../../types/command';
-import stop from './stop';
+import Command from "../../types/command";
+import stop from "./stop";
 
 /**
  * The debug module.  Includes commands for managing/debugging the bot.

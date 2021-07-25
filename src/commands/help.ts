@@ -1,5 +1,5 @@
-import { Client, Message } from 'discord.js';
-import Command from '../types/command';
+import { Client, Message } from "discord.js";
+import Command from "../types/command";
 
 /**
  * The help command.  This one is special because it is just a function and it
@@ -21,16 +21,16 @@ const help = (
   message: Message,
   commands: Command[],
   _args: string[],
-  _options: string[]
+  _options: string[],
 ) => {
   let response =
-    '**`help`:**\n  __aliases:__ none\n  __description:__ Lists all available commands.\n\n';
+    "**`help`:**\n  __aliases:__ none\n  __description:__ Lists all available commands.\n\n";
 
   commands.forEach((cmd) => {
-    if (cmd.protection !== 'normal') return;
+    if (cmd.protection !== "normal") return;
 
     response += `**\`${cmd.name}\`:**\n  __aliases:__ ${listAliases(
-      cmd
+      cmd,
     )}\n  __description:__ ${cmd.description}\n\n`;
   });
 
@@ -43,14 +43,14 @@ const help = (
  * @returns The list of aliases.
  */
 const listAliases = (cmd: Command): string => {
-  if (cmd.aliases === []) return 'none';
-  let response = '';
+  if (cmd.aliases === []) return "none";
+  let response = "";
   cmd.aliases.forEach((alias) => {
     response += `\`${alias}\`, `;
   });
 
   // Strip the ', ' off the last alias
-  return response.replace(/, $/g, '');
+  return response.replace(/, $/g, "");
 };
 
 export default help;

@@ -1,31 +1,31 @@
-import { Client, Message } from 'discord.js';
-import Command from '../../types/command';
+import { Client, Message } from "discord.js";
+import Command from "../../types/command";
 
 /**
  * The stop command.  Stops the bot.
  */
 const command: Command = {
-  name: 'stop',
-  aliases: ['kill', 'shutdown', 'quit', 'exit', 'die'],
-  description: 'Stops execution of the bot program.',
-  protection: 'protected',
+  name: "stop",
+  aliases: ["kill", "shutdown", "quit", "exit", "die"],
+  description: "Stops execution of the bot program.",
+  protection: "protected",
 
   execute: async (
     client: Client,
     message: Message,
     _args: string[] = [],
-    _options: string[] = []
+    _options: string[] = [],
   ) => {
     if (message.author.id !== process.env.AUTHOR_ID) {
       console.warn(
         `User @#${message.author.tag} atttempted to stop the bot without permission.  Ignoring.`
-          .yellow
+          .yellow,
       );
       return;
     }
-    console.log('Recieved shutdown command.  Stopping...'.blue.bold);
-    await client.user.setStatus('invisible');
-    await message.channel.send('**Shutting down...**');
+    console.log("Recieved shutdown command.  Stopping...".blue.bold);
+    await client.user.setStatus("invisible");
+    await message.channel.send("**Shutting down...**");
     process.exit();
   },
 };
