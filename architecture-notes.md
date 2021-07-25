@@ -26,5 +26,4 @@ To add a new _module_, create a new subfolder of the commands directory, and the
 
 The current architecture has some significant issues:
 
-- The `help` command is currently built directly into the command handler as a special function, instead of being implemented as a regular command.
 - There is, at present, no good way to share data between parts of the bot.
