@@ -2,7 +2,6 @@ import "colors";
 import * as Discord from "discord.js";
 import * as dotenv from "dotenv";
 import commands from "./commands";
-import help from "./commands/help";
 
 const prefix = "!"; // TODO: Make prompt non-hardcoded
 
@@ -33,12 +32,6 @@ client.on("message", (message) => {
   // command to its own variable
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-
-  // The help command is special and hardcoded.  TODO: Fix hardcoded help command
-  if (command === "help") {
-    help(client, message, commands, args, []);
-    return;
-  }
 
   // If we reach this point, iterate through all commands.  If the name or alias
   // of a command matches, run it
