@@ -3,6 +3,7 @@ import Command from "../../types/command";
 
 /**
  * The flip command.  Flips a coin.
+ * TODO: Implement flipping multiple coins.
  */
 const command: Command = {
   name: "flip",
